@@ -21,7 +21,7 @@ CourseSchema = new Schema  # DB Collection
     author: String
     coverUrl: String
     
-    slides: [Object]
+    slides: [{}]
 
 
 ## Instantiate =================================================================

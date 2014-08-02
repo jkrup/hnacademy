@@ -1,0 +1,52 @@
+extends layout
+
+block content
+    .container
+        if course
+            h1 Edit course "#{course.title}"
+        else
+            h1 Create new course
+
+        textarea#editor(name="originalText", rows=30, style="width: 100%; font-family: monospace", autofocus)
+            = course ? course.originalText : ""
+
+        button.btn.btn-danger.js-btn-save
+            | Save
+        | &nbsp;
+        button.btn.btn-default.js-btn-save-close
+            | Save &amp; Close
+        | &nbsp;
+        button.btn.btn-default.js-btn-close
+            | Close
+
+append scripts
+    script.
+        $(".js-btn-save").click(function() {
+            $.ajax({
+                type: "POST",
+                data: {text: $("#editor").val()},
+                success: function() {
+                    alert("Saved.");
+                },
+                error: function(jqXHR, status, err) {
+                    alert(jqXHR.responseText || err);
+                }
+            });
+        });
+
+        $(".js-btn-save-close").click(function() {
+            $.ajax({
+                type: "POST",
+                data: {text: $("#editor").val()},
+                success: function() {
+                    window.location = "..";
+                },
+                error: function(jqXHR, status, err) {
+                    alert(jqXHR.responseText || err);
+                }
+            });
+        });
+
+        $(".js-btn-close").click(function() {
+            window.location = "..";
+        });

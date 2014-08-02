@@ -1,6 +1,7 @@
 
 express = require 'express'
 errTo = require 'errto'
+yaml = require 'js-yaml'
 db = require './db'
 
 app = module.exports = new express.Router()
@@ -10,13 +11,39 @@ app.get '/', (req, res, next) ->
         return res.redirect req.originalUrl + "/"
 
     db.Course.find {}, errTo next, (courses) ->
-        res.render 'editor/index.html', {courses}
+        res.render 'editor/index.jade', {courses}
+
+app.param ':course', (req, res, next, courseId) ->
+    db.Course.findOne {urlslug: courseId}, errTo next, (course) ->
+        if not course? 
+            return next 'route'
+
+        req.course = res.locals.course = course
+        next()
+
 
 app.get '/courses/new', (req, res, next) ->
-    res.render 'editor/course-edit.html'
+    res.render 'editor/course-edit.jade'
 
 app.get '/courses/:course', (req, res, next) ->
-    res.render 'editor/course-edit.html'
+    res.render 'editor/course-edit.jade'
 
-app.post '/courses/', (req, res, next) ->
+
+yaml2course = (text) ->
+    data = yaml.safeLoad(text)
+    data.originalText = text
+    data
+
+
+app.post '/courses/new', (req, res, next) ->
+    db.Course.create yaml2course(req.body.text), errTo next, ->
+        res.status(204).end()
+, (err, req, res, next) ->
+    res.status(400).send ""+err
+
+app.post '/courses/:course', (req, res, next) ->
+    req.course.update yaml2course(req.body.text), errTo next, ->
+        res.status(204).end()
+, (err, req, res, next) ->
+    res.status(400).send ""+err
 
