@@ -17,6 +17,6 @@ app.param ':course', (courseId, req, res, next) ->
         next()
 
 
-app.get '/:course', (req, res, next) ->
-    res.render "course.html"
+#app.get '/:course', (req, res, next) ->
+    #res.render "course.html"
 
