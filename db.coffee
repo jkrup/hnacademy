@@ -14,10 +14,10 @@ db.close = db.db.close.bind(db.db)
 
 ## Schemas =====================================================================
 CourseSchema = new Schema  # DB Collection
-    urlslug: {type: String, unique: true}
+    urlslug: {type: String, unique: true, required: true}
     originalText: {type: String}
 
-    title: String
+    title: {type: String, required: true}
     author: String
     coverUrl: String
     
