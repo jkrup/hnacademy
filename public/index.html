@@ -10,6 +10,8 @@
     <link rel="stylesheet/less" href="app/tips/tips.less" />
     <link rel="stylesheet" href="bower_components/framework7/dist/css/framework7.min.css">
     <script src="bower_components/less/dist/less-1.7.4.js"></script>
+    <link rel="stylesheet" href="/bower_components/idangerous-swiper/dist/idangerous.swiper.css">
+    <script defer src="/bower_components/idangerous-swiper/dist/idangerous.swiper.min.js"></script>
     <script> less.watch(); less.env = "development"; localStorage.clear(); </script>
 </head>
 <body>
@@ -46,6 +48,21 @@
         <div class="pages navbar-through toolbar-through">
           <div data-page="index" class="page">
             <div class="page-content">
+
+              <div class="swiper-container">
+                <div class="swiper-wrapper">
+                  <!--First Slide-->
+                  <div class="swiper-slide"> 
+                    <p> this is a test text blob</p>
+                    <!-- Any HTML content of the first slide goes here -->
+                  </div>
+                  <!--Second Slide-->
+                  <div class="swiper-slide">
+                    <p>And another blob of text</p>
+                    <!-- Any HTML content of the second slide goes here -->
+                  </div>
+                </div>
+              </div>
 
             </div>
           </div>
@@ -122,5 +139,15 @@
   <script src="bower_components/alertify/alertify.js"></script>
   <link href="bower_components/alertify/themes/alertify.core.css" rel="stylesheet/css" />
   <link href="bower_components/alertify/themes/alertify.default.css" rel="stylesheet/css" />
+  <script type="text/javascript">
+    $(function(){
+        var mySwiper = $('.swiper-container').swiper({
+          //Your options here:
+          mode:'horizontal',
+          loop: false
+          //etc..
+          });
+        })
+  </script>
 </body>
 </html>
