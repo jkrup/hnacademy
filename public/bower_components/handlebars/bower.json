@@ -2,5 +2,14 @@
   "name": "handlebars",
   "version": "1.3.0",
   "main": "handlebars.js",
-  "dependencies": {}
+  "dependencies": {},
+  "gitHead": "f72fa3239d397b3a0169038ba83d7b6a25de0ce4",
+  "readme": "Handlebars.js\n=============\n\nShim repository for [Handlebars.js](http://handlebarsjs.com).\n\nPackage Managers\n----------------\n\n* [Bower](http://twitter.github.com/bower/): `handlebars`\n* [Component](http://github.com/component/component): `components/handlebars.js`\n* [Composer](http://packagist.org/packages/components/handlebars.js): `components/handlebars.js`\n",
+  "readmeFilename": "README.md",
+  "_id": "handlebars@1.3.0",
+  "description": "Handlebars.js =============",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/components/handlebars.js"
+  }
 }
