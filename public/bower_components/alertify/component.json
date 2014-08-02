@@ -1,15 +1,6 @@
 {
-  "name": "alertify",
-  "version": "0.3.10",
-  "main": "./alertify.min.js",
-  "dependencies": {},
-  "gitHead": "e7b6c46d76604d297c389d830817b611c9a8f17c",
-  "readme": "alertify.js-shim\n================\n\nA shim repo for [alertify.js](https://github.com/fabien-d/alertify.js). This allows package manager (e.g. Bower) to install only the needed files.\n",
-  "readmeFilename": "README.md",
-  "_id": "alertify@0.3.10",
-  "description": "alertify.js-shim ================",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/fabien-d/alertify.js-shim.git"
-  }
+	"name"         : "alertify",
+	"version"      : "0.3.10",
+	"main"         : "./alertify.min.js",
+	"dependencies" : {}
 }
