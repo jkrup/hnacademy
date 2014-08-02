@@ -1,0 +1,43 @@
+{
+  "name": "idangerous-swiper",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nolimits4web/Swiper.git"
+  },
+  "description": "Mobile touch slider and framework with hardware accelerated transitions",
+  "version": "2.6.1",
+  "author": {
+    "name": "Vladimir Kharlampidi"
+  },
+  "homepage": "http://www.idangero.us/sliders/swiper/",
+  "keywords": [
+    "swiper",
+    "swipe",
+    "slider"
+  ],
+  "dependencies": {},
+  "scripts": [
+    "dist/idangerous.swiper.js"
+  ],
+  "main": "dist/idangerous.swiper.js",
+  "styles": [
+    "dist/idangerous.swiper.css"
+  ],
+  "license": [
+    "GPL",
+    "MIT"
+  ],
+  "ignore": [
+    ".*",
+    "demo-apps",
+    "demos",
+    "Gruntfile",
+    "lib",
+    "node_modules",
+    "package.json"
+  ],
+  "gitHead": "dbf4438be67d2c1f7e9e5e526867e95d3a34ff18",
+  "readme": "# Swiper - Mobile touch slider with hardware accelerated transitions\n\n## About\n\n**Swiper** \\- is the **free and ultra lightweight** mobile touch slider with hardware accelerated transitions (where supported) and amazing native behavior. It is intended to use in mobile websites, mobile web apps, and mobile native apps. Designed mostly for iOS, but also works on Android and latest Desktop browsers. **Swiper** is created by [iDangero.us][1]\n\n\n\n## Features\n\n  * **1:1 Touch movement**. But this ratio can be configured\n\n  * **Touch emulation**. This function will be useful if you are going to use Swiper on desktop sites. In this case Swiper will accept mouse events like touch events (click and drag to change slides)\n\n  * **Vertical/Horizontal**. Swiper comes with 2 main modes - horizontal (for horizontal animation and horizontal swipes) and vertical (for vertical animation and vertical swipes)\n\n  * **Free Mode**. When this mode enabled slides will not have fixed positions, like usual scroller (see demos bellow)\n\n  * **Rotation/resize adjustment**. Swiper will be reinitialized after rotation of device\n\n  * **Responsive**. Can be used with a width or/and height defined in percents, not fixed. Useful for usage on devices with a different resolutions\n\n  * **Scroll prevention**. Swiper will prevent vertical scroll when you touch it in \"horizontal\" mode, and horizontal scroll in \"vertical\" mode\n\n  * **Resistant bounds**. Swiper will increase resistance when you try to swipe it over than most left and most right positions (most top and most bottom for \"vertical\" mode)\n\n  * **Built-in pagination control**. Can be disabled\n\n  * **Auto Play**. Just set the delay and Swiper will change the slides automatically untill you touch it.\n\n  * **Loop mode**. In this mode you will get infinite scrolling and first slides will repeat after last ones. New in 1.5\n\n  * **Carousel mode**. Swiper allows you to set numbers of slides you want to display at the same time on slider's container. New in 1.5\n\n  * **Nested Swipers.** You can insert one Swiper into slide of different Swiper, for example vertical into horizontal. New in 1.5\n\n  * **Any HTML**. You can put any HTML content inside of slide, not only images\n\n  * **Rich API**. Swiper comes with very rich API. It allows to create your own pagination, \"next\" and \"previous\" buttons and comes with 4 callbacks - onTouchStart, onTouchMove, onTouchEnd, onSlideSwitch\n\n  * **Flexible configuration**. Swiper accepts a lot of parameters on initialization to make it much flexible as possible. You can configure animation speed, mode (vertical or horizontal), free mode, enable/disable pagination, touch ratio, etc.\n\n  * **Hardware accelerated**. Swiper uses hardware accelerated technics (where supported) to achive ultra smooth animation and perfomance, especially on iOS devices.\n\n  * **Awesome compatibility**. Swiper compatible and tested with: Mobile Safari (tested on iOS5), Android 2.1%2B, latest desktop versions of Google Chrome, Safari, Firefox, Internet Explorer 10 and Opera. It also works in Internet Explorer 9 but without animation.\n\n  * **Standalone**. Swiper doesn't require any JavaScript libraries like jQuery, it makes Swiper much more smaller and faster. So it can be safely used with such libraries as jQuery, jQuery Mobile, jQTouch, etc.\n\n  * **Ultra lightweight**. Only 3.2 KB minified and gzipped\n\n_**With all these features you can build amazing touch interfaces and apps with awesome native behavior.**_\n\n## Demos & Usage\n\n[http://www.idangero.us/sliders/swiper/](http://www.idangero.us/sliders/swiper/)\n\n## License\n\nSwiper is licensed under GPL & MIT\n\n   [1]: http://www.idangero.us",
+  "readmeFilename": "README.md",
+  "_id": "swiper@2.6.1"
+}
