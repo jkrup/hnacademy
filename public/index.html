@@ -8,71 +8,99 @@
     <title>HN Academy</title>
 
     <link rel="stylesheet/less" href="app/tips/tips.less" />
+    <link rel="stylesheet" href="bower_components/framework7/dist/css/framework7.min.css">
     <script src="bower_components/less/dist/less-1.7.4.js"></script>
+    <link rel="stylesheet" href="/bower_components/idangerous-swiper/dist/idangerous.swiper.css">
+    <script defer src="/bower_components/idangerous-swiper/dist/idangerous.swiper.min.js"></script>
     <script> less.watch(); less.env = "development"; localStorage.clear(); </script>
 </head>
 <body>
+ <!-- Status bar overlay for full screen mode (PhoneGap) -->
+    <div class="statusbar-overlay"></div>
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal">
+      <div class="content-block">
+        <p>Left panel content goes here</p>
+      </div>
+    </div>
+    <!-- Views -->
+    <div class="views">
 
-
-    <div class="tips">
-
-        <div class="tips-header">
-
-            <div class="header-menu">
-                <a class="menu-back" href="#">
-                    <i class="fa fa-angle-left"></i>
-                </a>
+      <!-- Your main view, should have "view-main" class -->
+      <div class="view view-main">
+        <!-- Top Navbar-->
+        <div class="navbar">
+          <div class="navbar-inner">
+            <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
+            <div class="center sliding">Awesome App</div>
+            <div class="right">
+              <!-- 
+                Right link contains only icon - additional "icon-only" class
+                Additional "open-panel" class tells app to open panel when we click on this link
+              -->
+              <a href="#" class="link icon-only open-panel"><i class="icon icon-bars-blue"></i></a>
             </div>
+          </div>
+        </div>
+        <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-through toolbar-through">
+          <div data-page="index" class="page">
+            <div class="page-content">
 
-            <div class="header-name">How to Win Hackathons</div>
+              <div class="swiper-container">
+                <div class="swiper-wrapper">
+                  <!--First Slide-->
+                  <div class="swiper-slide" style="background:#444"> 
+                    <p> this is a test text blob</p>
+                    <!-- Any HTML content of the first slide goes here -->
+                  </div>
+                  <!--Second Slide-->
+                  <div class="swiper-slide" style="background:#900"> 
+                    <p>And another blob of text</p>
+                    <!-- Any HTML content of the second slide goes here -->
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
 
         </div>
-
-        <div class="tips-title">
-
-            <h1 class="title">Prepare your hosting and backend infrastructure</h1> 
-
+         <!--Bottom Toolbar-->
+        <div class="toolbar">
+          <div class="toolbar-inner">
+            <!-- Toolbar links -->
+            <a href="#" class="link">17 of 35</a>
+            <a href="#" class="link">Favorite</a>
+            <a href="#" class="link">Next</a>
+          </div>
         </div>
-
-        <div class="tips-copy">
-
-            <p>This will save you a ton of time.</p>
-
-        </div>
-
-
-        <div class="tips-footer">
-
-            <ul class="footer-buttons">
-
-                <li class="button location-button">
-                    <span>17 of 35</span>
-                </li>
-
-                <li class="button favorite-button">
-                    <i class="fa fa-heart-o"></i>
-                    <span>Favorite</span>
-                </li>
-
-                <li class="button next-button">
-                    <span>Next</span>
-                    <i class="fa fa-angle-right"></i>
-                </li>
-
-            </ul>
-
-        </div>
-
+      </div>
 
     </div>
 
-
-
-	<script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/handlebars/handlebars.js"></script>
+    <script src="bower_components/framework7/dist/js/framework7.min.js"></script>
 
-	<script src="bower_components/alertify/alertify.js"></script>
-	<link href="bower_components/alertify/themes/alertify.core.css" rel="stylesheet/css" />
-	<link href="bower_components/alertify/themes/alertify.default.css" rel="stylesheet/css" />
+    <script src="app/app.js"></script>
+
+  <script src="bower_components/alertify/alertify.js"></script>
+  <link href="bower_components/alertify/themes/alertify.core.css" rel="stylesheet/css" />
+  <link href="bower_components/alertify/themes/alertify.default.css" rel="stylesheet/css" />
+  <script type="text/javascript">
+    $(function(){
+        var mySwiper = $('.swiper-container').swiper({
+          //Your options here:
+          mode:'horizontal',
+          loop: false
+          //etc..
+          });
+        })
+  </script>
 </body>
 </html>

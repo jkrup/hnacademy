@@ -1,0 +1,54 @@
+{
+  "name": "framework7",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nolimits4web/Framework7.git"
+  },
+  "description": "Full Featured HTML Framework For Building iOS 7 Apps",
+  "version": "0.9.4",
+  "author": {
+    "name": "Vladimir Kharlampidi"
+  },
+  "homepage": "http://www.idangero.us/framework7",
+  "keywords": [
+    "mobile",
+    "framework",
+    "ios 7",
+    "ios7",
+    "ios8",
+    "ios 8",
+    "iphone",
+    "ipad",
+    "apple",
+    "phonegap",
+    "native",
+    "touch",
+    "appstore",
+    "app",
+    "f7"
+  ],
+  "scripts": [
+    "dist/js/framework7.js"
+  ],
+  "main": "dist/",
+  "styles": [
+    "dist/css/framework7.css"
+  ],
+  "license": [
+    "MIT"
+  ],
+  "ignore": [
+    ".*",
+    "build",
+    "custom",
+    "kitchen-sink/",
+    "Gruntfile.js",
+    "apps",
+    "node_modules",
+    "package.json"
+  ],
+  "gitHead": "fd4e10581f1e33197a3867c1c6cf5388ed5dc475",
+  "readme": "[![Stories in Ready](https://badge.waffle.io/nolimits4web/framework7.png?label=ready&title=Ready)](https://waffle.io/nolimits4web/framework7)\n[![Build Status](https://travis-ci.org/nolimits4web/Framework7.svg?branch=master)](https://travis-ci.org/nolimits4web/Framework7)\n[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=nolimits4web&url=https://github.com/nolimits4web/framework7/&title=Framework7&language=JavaScript&tags=github&category=software)\n\nFramework7\n==========\n\nFull Featured HTML Framework For Building iOS7 Apps\n\n## Attention!\n\nFramework7 is on early development stage, so many things may be changed and sorted in a short time.\n\n## Getting Started\n  * Clone/download this repo\n  * Start building your App from changing Kitchen Sink, or from a clean template from `dist/` folder\n\n## Server\n\nBecause Framework7 uses Ajax for navigation between pages you will need a server. So to make it work you should put dist folder (or Kitchen Sink) on a server. Or, as an option, you may use Grunt's server. Just run:\n\n```\n$ grunt server\n```\n\n  * Kitchen Sink will be available on `http://localhost:3000/kitchen-sink/`\n  * Dist - on `http://localhost:3000/dist/`\n\n## Kitchen Sink\n\nFramework7' JS and CSS files in Kitchen Sink are temporary linked to `build/` to make development process easier on this stage. So to make it work you need to build Framework7 (see Build section) or to re-link JS and CSS files to `dist/` folder.\n\n## Dist vs Build versions\n\nOn production use files (JS and CSS) only from `dist/` folder, there will be the most stable versions, `build/` folder is only for development purpose\n\n## Build\n\nFramework7 uses `grunt` to build a development (build) and dist versions.\n\nFirst you need to have `grunt-cli` which you should install globally.\n\n```\n$ npm install -g grunt-cli\n```\n\nThen install all dependencies, in repo's root:\n\n```\n$ npm install\n$ grunt build\n```\n\nThe result is available in `build/` folder.\n\n## Dist/Release\n\nAfter you have made build:\n\n```\n$ grunt dist\n```\n\nDistributable version will available in `dist/` folder.\n\n## Custom build\n\nYou can build custom version of Framework7 with only required components/modules. For example, if we need to include only Accordion, Modals and Tabs modules in addition to Framework 7 core: \n\n```\n$ grunt custom:accordion,modals,tabs\n```\nAfter that you will find created `custom/` folder with generated JS and CSS files. Here is the list of available additional modules:\n\n* accordion\n* searchbar\n* messages\n* modals\n* swipeout\n* sortable\n* smart-select\n* pull-to-refresh\n* infinite-scroll\n* tabs\n* fast-clicks\n* forms (means Ajax forms and forms storage)\n* push-state\n* slider\n* photo-browser\n* notifications\n\n## Contributing\n\nAll changes should be commited to `src/` files. Framework7 uses LESS for CSS compliations, and concatenated JS files (look at Gruntfile.js for concat files order)\n\nIf you want to help in Framework7 development and make it event better visit this page: http://www.idangero.us/framework7/contribute/\n\n## Forum\n\nIf you have questions about Framework7 or want to help others you are welcome to special forum at http://www.idangero.us/framework7/forum/\n\n## Docs\n\nDocumentation available at http://idangero.us/framework7/docs/\n\n## Tutorials\n\nTutorials available at http://idangero.us/framework7/tutorials/\n\n## Showcase\n\nAppstore apps made with Framework7: http://idangero.us/framework7/showcase/",
+  "readmeFilename": "README.md",
+  "_id": "Framework7@0.9.4"
+}
