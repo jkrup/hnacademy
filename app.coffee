@@ -5,6 +5,7 @@ bodyParser = require 'body-parser'
 cookieParser = require 'cookie-parser'
 logger = require 'morgan'
 errorHandler = require 'errorhandler'
+mixin = require 'express/node_modules/utils-merge'
 config = require './config'
 
 require './express-helpers'
@@ -22,8 +23,13 @@ app.use bodyParser.urlencoded(extended: true)
 app.use cookieParser()
 app.use logger config.logFormat
 
+app.engine 'html', require('hbs').__express
+app.engine 'jade', require('jade').renderFile
+mixin app.locals, {config}
+
 # Main views.
 app.use require './app-views'
+
 
 
 

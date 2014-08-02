@@ -13,6 +13,7 @@
         "morgan": "",
 
         "jade": "",
+        "hbs": "",
         "less-middleware": "",
         "coffee-middleware": "",
         "mongoose": "3.8",

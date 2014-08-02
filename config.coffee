@@ -2,7 +2,8 @@
 module.exports =
     projectName: process.env.PROJECT_NAME || require('path').basename(__dirname)
     env: process.env.NODE_ENV || 'development'
-    
+
+    mongoUrl: process.env.MONGO_URL ? "mongodb://localhost/hnacatmp"
 
     http:
         port: process.env.PORT || 3000
