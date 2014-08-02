@@ -27,6 +27,9 @@ app.engine 'html', require('hbs').__express
 app.engine 'jade', require('jade').renderFile
 mixin app.locals, {config}
 
+# Editor/admin views
+app.use "/admin!!", require './app-editor'
+
 # Main views.
 app.use require './app-views'
 
