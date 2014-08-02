@@ -16,6 +16,9 @@ unset GIT_DIR
 cd "$(dirname "$(readlink -f "$0")")"  # Move to config file directory
 cd "$(git rev-parse --show-toplevel)" # Move to git repository root
 
+# Notify slack.
+config/git-slack-hook
+
 # Check out current branch to working tree.
 # This drops all previous changes to index and working tree.
 git reset --hard
