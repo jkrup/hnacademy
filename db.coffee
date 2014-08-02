@@ -15,13 +15,16 @@ db.close = db.db.close.bind(db.db)
 ## Schemas =====================================================================
 CourseSchema = new Schema  # DB Collection
     urlslug: {type: String, unique: true, required: true}
-    originalText: {type: String}
+    createdAt: {type: Date, default: Date.now}
+    modifiedAt: {type: Date}
 
     title: {type: String, required: true}
     author: String
     coverUrl: String
     
     slides: [{}]
+
+    originalText: {type: String}
 
 
 ## Instantiate =================================================================

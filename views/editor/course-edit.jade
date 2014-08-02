@@ -10,17 +10,18 @@ block content
         textarea#editor(name="originalText", rows=30, style="width: 100%; font-family: monospace", autofocus)
             = course ? course.originalText : ""
 
-        button.btn.btn-danger.js-btn-save
-            | Save
-        | &nbsp;
-        button.btn.btn-default.js-btn-save-close
-            | Save &amp; Close
-        | &nbsp;
-        button.btn.btn-default.js-btn-close
-            | Close
-        | &nbsp;
-        a(href="https://docs.google.com/document/d/1d-JFyC7FF89D_a5E8PQA231NuQKN1ryPrFuzWFxOCXo/edit", target="_blank")
-            | Syntax document
+        .button-row(style="margin-bottom: 60px")
+            button.btn.btn-danger.js-btn-save
+                | Save
+            | &nbsp;
+            button.btn.btn-default.js-btn-save-close
+                | Save &amp; Close
+            | &nbsp;
+            button.btn.btn-default.js-btn-close
+                | Close
+            | &nbsp;
+            a(href="https://docs.google.com/document/d/1d-JFyC7FF89D_a5E8PQA231NuQKN1ryPrFuzWFxOCXo/edit", target="_blank")
+                | Syntax document
 
 append scripts
     script.
@@ -28,8 +29,10 @@ append scripts
             $.ajax({
                 type: "POST",
                 data: {text: $("#editor").val()},
-                success: function() {
+                success: function(data) {
                     alert("Saved.");
+                    if (data.urlslug != (""+location).split('/').pop())
+                        location = data.urlslug;
                 },
                 error: function(jqXHR, status, err) {
                     alert(jqXHR.responseText || err);

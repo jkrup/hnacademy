@@ -1,15 +1,35 @@
 extends layout
 
 block content
-    .container    
+    .container(style="width: 600px")
         h1 Editor interface
 
-        h3 Courses:
+        h3 Courses
         
-        ul.unstyled: each course in courses
-            li
-                a(href='courses/#{course.urlslug}')= course.title
-        
+        table.table: each course in courses
+            tr
+                td: a(href='courses/#{course.urlslug}')= course.title
+                td(style="text-align: right")
+                    a.js-btn-delete(href='javascript:void(0)', data-urlslug=course.urlslug) delete
+
         br
         
         a(href='courses/new') Add new course
+
+
+append scripts
+    script.
+        $(".js-btn-delete").click(function() {
+            if (confirm("Are you sure to delete the course?")) {
+                $.ajax({
+                    type: "DELETE",
+                    url: "courses/"+$(this).data("urlslug"),
+                    success: function() {
+                        location.reload();
+                    },
+                    error: function(jqXHR, status, err) {
+                        alert(jqXHR.responseText || err);
+                    }
+                });
+            }
+        });
