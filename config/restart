@@ -1,0 +1,71 @@
+#!/bin/bash -e
+
+# This is a restart script for the project. It must have the executable bit set.
+
+# Must be called by user git to not screw up file ownership & permissions.
+if [ `whoami` != 'git' ]; then
+    echo "You must be user 'git' to run this script."
+    exit
+fi
+
+# Do not depend on current directory: always move to the git repository root.
+cd "$(dirname "$(readlink -f "$0")")"  # Move to config file directory
+cd "$(git rev-parse --show-toplevel)" # Move to git repository root
+
+PROJECT_DIR=$(pwd)
+PROJECT_NAME=$(basename "$PROJECT_DIR") # Project name is the directory name of the project
+PROJECT_NAME=${PROJECT_NAME%\.git}   # Remove '.git' suffix if exists.
+
+# Install post-receive hook. This is only needed initially, but makes no harm in subsequent calls.
+ln -sf "$PROJECT_DIR/config/post-receive" .git/hooks/post-receive
+
+# Load project parameters to get the $PORT, $DOMAINS and other variables.
+. ./.env
+
+# Small templating: replace {{VAR}} to its current scope value, or empty string.
+# Usage: template <infile> > <outfile>
+template() {
+    sed -f <(set | sed -n -e "s/^\([A-Z0-9_]*\)=\(.*\)/s#{{\1}}#\2#g/p") -e "s/{{.*}}//g" $1
+}
+
+
+# 1. Update NPM Dependencies, build production files.
+
+# Install missing npm modules.
+npm install -q --production
+
+# Once a week we update npm modules. Keep last update time in node_modules dir modification time.
+if [ -n "$(find node_modules -maxdepth 0 -mtime +7)" ]; then
+    npm update
+    touch node_modules
+fi
+
+# Build production files.
+npm run-script prepare-production --loglevel silent
+
+
+# 2. Template, test & reload Nginx configuration.
+
+template config/nginx | sudo tee /etc/nginx/sites-enabled/$PROJECT_NAME > /dev/null
+
+sudo nginx -t -q
+sudo nginx -s reload
+
+
+# 3. (Re)start project - ubuntu specific
+
+# Template & copy the upstart job (symlink doesn't get started on server restart anyway).
+template config/upstart.conf | sudo tee /etc/init/$PROJECT_NAME.conf > /dev/null
+
+if [[ $(status $PROJECT_NAME) =~ "start/running" ]] ; then
+    sudo restart $PROJECT_NAME
+else
+    sudo start $PROJECT_NAME
+fi
+
+# 4. Look into the log file - it should output that is started correctly.
+
+sudo tail -n 0 -q -f /var/log/upstart/$PROJECT_NAME.log &
+P=$!
+sleep 5
+sudo kill $P
