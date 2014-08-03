@@ -7,15 +7,17 @@
             i.icon.icon-bars-blue
         .center
           = course.title
-    .swiper-container
-      #swiper.swiper-wrapper
-          each slide, index in course.slides
-            .swiper-slide
-              case slide.type
-                when "cover"
-                  include partials/type-cover.jade
-                when "statement"
-                  include partials/type-statement.jade
+
+    .container
+      .swiper-container
+        #swiper.swiper-wrapper
+            each slide, index in course.slides
+              .swiper-slide
+                case slide.type
+                  when "cover"
+                    include partials/type-cover.jade
+                  when "statement"
+                    include partials/type-statement.jade
   .toolbar
     .toolbar-inner
       a.link(href="#") <span id="current_slide_num">0</span>&nbsp;of #{course.slides.length}
