@@ -11,21 +11,32 @@ block content
             = course ? course.originalText : ""
 
         .button-row(style="margin-bottom: 60px")
-            button.btn.btn-danger.js-btn-save
-                | Save
+            button.btn.btn-danger.js-btn-save Save
             | &nbsp;
-            button.btn.btn-default.js-btn-save-close
-                | Save &amp; Close
+            button.btn.btn-default.js-btn-save-close Save &amp; Close
             | &nbsp;
-            button.btn.btn-default.js-btn-close
-                | Close
+            button.btn.btn-default.js-btn-close Close
             | &nbsp;
+            button.btn.btn-default.js-btn-insert-pic Insert pic
+            | &nbsp;&nbsp;
             a(href="https://docs.google.com/document/d/1d-JFyC7FF89D_a5E8PQA231NuQKN1ryPrFuzWFxOCXo/edit", target="_blank")
                 | Syntax document
 
 append scripts
+    script(src="/bower_components/codemirror/lib/codemirror.js")
+    //-script(src="/bower_components/codemirror/addon/lint/yaml-lint.js")
+    script(src="/bower_components/codemirror/mode/yaml/yaml.js")
     script.
+        CodeMirror.defaults.mode = "yaml";
+        CodeMirror.defaults.lineWrapping = true;
+        CodeMirror.defaults.lineNumbers = true;
+        CodeMirror.defaults.foldGutter = true;
+        CodeMirror.defaults.gutters = ["CodeMirror-linenumbers", "CodeMirror-foldgutter"];
+
+        var editor = CodeMirror.fromTextArea(document.getElementById("editor"));
+
         $(".js-btn-save").click(function() {
+            editor.save();
             $.ajax({
                 type: "POST",
                 data: {text: $("#editor").val()},
@@ -41,6 +52,7 @@ append scripts
         });
 
         $(".js-btn-save-close").click(function() {
+            editor.save();
             $.ajax({
                 type: "POST",
                 data: {text: $("#editor").val()},
@@ -56,3 +68,31 @@ append scripts
         $(".js-btn-close").click(function() {
             window.location = "..";
         });
+
+        $(".js-btn-insert-pic").click(function() {
+            uploadcare.openDialog(null, {
+                imagesOnly: true,
+            }).done(function(file) {
+                file.done(function(info) {
+                    var url = info.cdnUrl.replace("http://www.", "//");
+                    editor.replaceSelection(url, "end");
+                });
+            });
+        });
+
+        UPLOADCARE_PUBLIC_KEY = "#{config.uploadcarePublicKey}";
+        //UPLOADCARE_TABS = "file url facebook gdrive instagram evernote vk";
+
+    script(src=config.uploadcareScript)
+
+append styles
+    link(href="/bower_components/codemirror/lib/codemirror.css", rel="stylesheet")
+    style.
+        .CodeMirror {
+            border: 1px #DDD solid;
+            margin-bottom: 15px;
+            height: 500px;
+        }
+
+
+
