@@ -7,15 +7,12 @@ var $$ = Framework7.$;
 // Add view
 var mainView = myApp.addView('.view-main', {
   // Because we want to use dynamic navbar, we need to enable it for this view:
-  dynamicNavbar: true,
+  dynamicNavbar: false,
   swipeBackPage: false
 });
 
 // Swiper code
 myApp.onPageInit("course", function(page) {
-  $("a.back").click(function() {
-    $(".navbar").html("<div class='navbar-inner'><div class='center'>HNAcademy</div></div>");
-  });
   var coverPage = function() {
     $(".toolbar").fadeOut("fast")
     $(".custom-navbar").fadeOut("fast")
