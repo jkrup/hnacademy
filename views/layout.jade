@@ -5,30 +5,46 @@ html(lang="en")
     meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
     meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui')
     meta(name='apple-mobile-web-app-capable', content='yes')
-    title HN Academy
-    link(rel='stylesheet', href='bower_components/framework7/dist/css/framework7.min.css')
-    link(rel='stylesheet', href='bower_components/idangerous-swiper/dist/idangerous.swiper.css')
-    link(rel='stylesheet', href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css")
-    link(rel='stylesheet/less', href='app/tips/tips.less')
+    
+    title Hacker News Academy
+    
+    link(href='bower_components/framework7/dist/css/framework7.min.css', rel='stylesheet')
+    link(href='bower_components/idangerous-swiper/dist/idangerous.swiper.css', rel='stylesheet')
+    //-link(href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css", rel='stylesheet')
+    //-link(href="bower_components/alertify/themes/alertify.core.css", rel="stylesheet")
+    //-link(href="bower_components/alertify/themes/alertify.default.css", rel="stylesheet")
+
+    link(href='app/tips/tips.less', rel='stylesheet/less')
+
     script(src='bower_components/less/dist/less-1.7.4.js')
     script.
       less.watch(); less.env = "development"; localStorage.clear();
+  
   body
     .statusbar-overlay
     .panel-overlay
+    
     .panel.panel-left.panel-reveal
       .content-block
-        p Left panel content goes here
+        //-p Left panel content goes here
+
     .views
       .view.view-main
           block content
+
     script(src="bower_components/jquery/dist/jquery.js")
     script(src="bower_components/handlebars/handlebars.js")
     script(src="bower_components/framework7/dist/js/framework7.min.js")
-    script(defer, src="bower_components/idangerous-swiper/dist/idangerous.swiper.min.js")
+    script(src="bower_components/idangerous-swiper/dist/idangerous.swiper.min.js")
+    //-script(src="bower_components/alertify/alertify.js")
+
     script(src="app/app.js")
-    script(src="bower_components/alertify/alertify.js")
-    link(href="bower_components/alertify/themes/alertify.core.css", rel="stylesheet/css")
-    link(href="bower_components/alertify/themes/alertify.default.css", rel="stylesheet/css")
-    script(src="/app/tips/tips.js", type="text/javascript")
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-53463168-2', 'auto');
+      ga('send', 'pageview');
+
 
