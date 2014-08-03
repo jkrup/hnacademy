@@ -10,7 +10,12 @@ var mainView = myApp.addView('.view-main', {
   dynamicNavbar: false,
   swipeBackPage: false
 });
+window.mainView = mainView;
 
+window.goToCourseIndex = function(index) {
+  parseInt(index);
+  $$($(".course-item")[0]).click();
+};
 // Swiper code
 myApp.onPageInit("course", function(page) {
   /*var coverPage = function() {
