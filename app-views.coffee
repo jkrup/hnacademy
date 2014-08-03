@@ -21,4 +21,3 @@ app.param ':course', (req, res, next, courseId) ->
 
 app.get '/:course', (req, res, next) ->
     res.render "course.html"
-
