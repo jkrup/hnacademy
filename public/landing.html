@@ -60,7 +60,7 @@
             <iframe src="?mobile=force"></iframe>
           </div>
           
-          <img class="arrow left-arrow" src="img/right-arrow.png" alt="right arrow">
+          <img id="left_swipe" class="arrow left-arrow" src="img/right-arrow.png" id="right_swipe" alt="right arrow">
         </div>
       
       </div>
@@ -84,6 +84,16 @@
 
 <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script>
+$("#right_swipe").click( function() {
+  $("iframe")[0].contentWindow.swiper.swipeNext()
+  return false;
+});
+$("#left_swipe").click( function() {
+  $("iframe")[0].contentWindow.swiper.swipePrev()
+  return false;
+});
+</script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
