@@ -22,6 +22,12 @@ window.goToCourseIndex = function(index) {
 };
 // Swiper code
 myApp.onPageInit("course", function(page) {
+  $("#fast-forward").click(function(e) {
+    console.log("FF");
+    window.swiper.swipeTo(parseInt($("#swiper").attr('data-email')),750)
+    e.stopPropagation();
+    return false;
+  });
   var hammertime = new Hammer($("body")[0], {});
   hammertime.on('tap', function(ev) {
     console.log("tapped");
@@ -53,11 +59,13 @@ function loadFaves(page) {
       else
         $$(this).removeClass('faved');
     })
-    .on('click', function() {
+    .on('click', function(e) {
       var id = $$(this).data('id');
       $$(this).toggleClass('faved');
       localStorage.setItem("course-favs/"+pageUrlSlug+"/"+id, $$(this).is(".faved"));
       updateFavResult();
+      e.stopPropogation();
+      return false;
     });
   updateFavResult();
 }

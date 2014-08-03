@@ -3,16 +3,15 @@
     .page-content
       .custom-navbar
         .custom-navbar-inner
+          .right-abs
+            a.link#fast-forward(href="#") >
           .left-abs
-            a.link.back.icon-only(href="/")
-              <
+            a.link.back.icon-only(href="/") <
           .center
             = course.title
-          .right
-            a.link#fast-forward(href="#") >
 
       .swiper-container
-        #swiper.swiper-wrapper
+        #swiper.swiper-wrapper(data-email=3)
             each slide, index in course.slides
               .swiper-slide
                 case slide.type
