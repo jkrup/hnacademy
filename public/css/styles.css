@@ -1,0 +1,109 @@
+body {
+    font-size: 15px;
+    font-family: 'Open Sans';
+    color: grey;
+}
+
+#header {
+    margin-top: 42px;
+    width: 100%;
+}
+
+#main {
+    margin-top: 70px;
+}
+
+#marketing {
+    font-family: 'Montserrat';
+    color: black;
+    font-size: 45px;
+        
+}
+
+.course-title {
+    font-family: 'Montserrat';
+    font-size: 25px;
+    color: black;
+}
+.footer {
+    margin-top: 70px;
+    background-color: grey;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.black-font {
+    color: black;
+}
+
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+    display: inline-block;
+    margin-right: 54px;
+}
+
+.white-font {
+    color: white;
+}
+
+.row {
+    width: 100%;
+}
+
+.leftify {
+    margin-left: -15px;
+}
+
+.rightify {
+    margin-right: -15px;
+}
+
+#phone {
+    float: right;
+}
+
+iframe {
+    height: 548px;
+    width: 320px;
+    border: 3px solid black;
+}
+
+.align-middle {
+    vertical-align: middle;
+}
+
+.align-top {
+    vertical-align: top;
+}
+
+#phone-skin {
+    background-image: url('iPhone.png');
+    height: 812px;
+    width: 404px;
+    display: inline-block;
+    padding-top: 148px;
+    padding-left: 44px;
+}
+
+.col-xs-7 {
+    padding-right: 0;
+}
+
+.icon {
+    height: 48px;
+    width: 48px;
+}
+
+a:hover {
+    color: #098fc1;
+}
+
+#contacts {
+    display: inline-block;
+    margin-top: 13px;
+}

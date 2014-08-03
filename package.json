@@ -18,6 +18,7 @@
         "coffee-middleware": "",
         "mongoose": "3.8",
 
+        "mobile-detect": "",
         "marked": "",
         "js-yaml": "",
         "uploadcare": "",

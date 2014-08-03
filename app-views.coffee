@@ -3,12 +3,17 @@ express = require 'express'
 errTo = require 'errto'
 db = require './db'
 hbs = require 'hbs'
+MobileDetect = require 'mobile-detect'
 
 app = module.exports = new express.Router()
 
 # Main page + course list
 app.get '/', (req, res, next) ->
-    db.Course.find().sort("-createdAt").exec errTo next, (courses) ->
+    md = new MobileDetect req.headers['user-agent']
+    if not md.mobile() and not req.query.mobile
+        return res.render '../public/landing.html'
+
+    db.Course.find().sort("createdAt").exec errTo next, (courses) ->
         res.render "index.jade", {courses}
 
 

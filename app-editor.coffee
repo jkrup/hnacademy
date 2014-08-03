@@ -10,7 +10,7 @@ app.get '/', (req, res, next) ->
     if req.originalUrl[req.originalUrl.length-1] != '/'
         return res.redirect req.originalUrl + "/"
 
-    db.Course.find().sort("-createdAt").exec errTo next, (courses) ->
+    db.Course.find().sort("createdAt").exec errTo next, (courses) ->
         res.render 'editor/index.jade', {courses}
 
 app.param ':course', (req, res, next, courseId) ->
