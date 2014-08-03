@@ -1,14 +1,13 @@
-.page(data-page="course")
-  .page-content
-    .navbar
-      .navbar-inner
-        .left
-          a.link.back.icon-only(href="/")
-            i.icon.icon-bars-blue
-        .center
-          = course.title
-
-    .container
+.pages
+  .page(data-page="course").no-navbar
+    .page-content
+      .custom-navbar
+        .custom-navbar-inner
+          .left-abs
+            a.link.back.icon-only(href="/")
+              <
+          .center
+            = course.title
       .swiper-container
         #swiper.swiper-wrapper
             each slide, index in course.slides
@@ -18,8 +17,14 @@
                     include partials/type-cover.jade
                   when "statement"
                     include partials/type-statement.jade
-  .toolbar
-    .toolbar-inner
-      a.link(href="#") <span id="current_slide_num">0</span>&nbsp;of #{course.slides.length}
-      a.link(href="#") Favorite
-      a.link(href="#") Next
+                  when "section-cover"
+                    include partials/type-section-cover.jade
+                  when "tip"
+                    include partials/type-tip.jade
+    .toolbar.hidden
+      .toolbar-inner
+        a.link.muted(href="#") <span id="current_slide_num">0</span>&nbsp;of #{course.slides.length -1}
+        a.link.muted(href="#") 
+          i.fa.fa-heart-o
+          | Favorite
+        a.link.muted(href="#") Next

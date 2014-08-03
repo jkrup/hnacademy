@@ -13,7 +13,16 @@ html(lang="en")
         block head-scripts
 
     body
-        block content
+      .statusbar-overlay
+      .views
+        .view.view-main
+          block content
 
-        block scripts
-            script(src="/bower_components/jquery/dist/jquery.min.js")
+      block scripts
+          script(src="/bower_components/jquery/dist/jquery.min.js")
+
+    .panel.panel-left.panel-reveal
+      .content-block
+        p Left panel content goes here
+
+
