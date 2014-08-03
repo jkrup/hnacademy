@@ -70,7 +70,7 @@ function loadFaves(page) {
       $$(this).toggleClass('faved');
       localStorage.setItem("course-favs/"+pageUrlSlug+"/"+id, $$(this).is(".faved"));
       updateFavResult();
-      e.stopPropogation();
+      e.stopPropagation();
       return false;
     });
   updateFavResult();
