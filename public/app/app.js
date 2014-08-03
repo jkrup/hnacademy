@@ -13,8 +13,7 @@ var mainView = myApp.addView('.view-main', {
 window.mainView = mainView;
 
 window.goToCourseIndex = function(index) {
-  parseInt(index);
-  $$($(".course-item")[0]).click();
+  $$($(".course-item")[index]).click();
 };
 // Swiper code
 myApp.onPageInit("course", function(page) {
