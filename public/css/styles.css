@@ -25,42 +25,23 @@ body {
     font-size: 25px;
     color: black;
 }
+.course-title:hover {
+    color: black;
+    text-decoration: none;
+}
 .footer {
     margin-top: 70px;
     background-color: grey;
+    color: white;
     padding-top: 40px;
     padding-bottom: 40px;
 }
-
-.black-font {
-    color: black;
-}
-
-
-.float-left {
-    float: left;
-}
-
-.float-right {
-    float: right;
-    display: inline-block;
-    margin-right: 54px;
-}
-
-.white-font {
+.footer a {
     color: white;
 }
-
-.row {
-    width: 100%;
-}
-
-.leftify {
-    margin-left: -15px;
-}
-
-.rightify {
-    margin-right: -15px;
+.footer a:hover {
+    color: #AAA;
+    text-decoration: none;
 }
 
 #phone {
@@ -74,14 +55,6 @@ iframe {
     border-top: 3px solid black;
 }
 
-.align-middle {
-    vertical-align: middle;
-}
-
-.align-top {
-    vertical-align: top;
-}
-
 #phone-skin {
     background-image: url('../img/iPhone.png');
     height: 812px;
@@ -92,11 +65,8 @@ iframe {
 }
 
 .arrow {
-    cursor: pointer;
-}
-
-.col-xs-7 {
-    padding-right: 0;
+    vertical-align: top;
+    /*cursor: pointer;*/
 }
 
 .icon {
@@ -109,6 +79,5 @@ a:hover {
 }
 
 #contacts {
-    display: inline-block;
-    margin-top: 13px;
+    margin: 13px 20px;
 }
