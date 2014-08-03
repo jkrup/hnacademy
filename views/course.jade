@@ -21,6 +21,10 @@
                     include partials/type-section-cover.jade
                   when "tip"
                     include partials/type-tip.jade
+                  when "email-results"
+                    include partials/type-email-results.jade
+                  when "complete"
+                    include partials/type-complete.jade
     .toolbar.hidden
       .toolbar-inner
         a.link.muted(href="#") <span id="current_slide_num">0</span>&nbsp;of #{course.slides.length -1}

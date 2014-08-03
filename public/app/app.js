@@ -13,6 +13,9 @@ var mainView = myApp.addView('.view-main', {
 
 // Swiper code
 myApp.onPageInit("course", function(page) {
+  $("a.back").click(function() {
+    $(".navbar").html("<div class='navbar-inner'><div class='center'>HNAcademy</div></div>");
+  });
   var coverPage = function() {
     $(".toolbar").fadeOut("fast")
     $(".custom-navbar").fadeOut("fast")
