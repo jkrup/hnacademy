@@ -56,11 +56,12 @@ iframe {
 
 #phone-skin {
     background-image: url('../img/iPhone.png');
-    height: 818px;
+    background-size: 387px 814px;
+    height: 814px;
     width: 387px;
     display: inline-block;
-    padding-top: 148px;
-    padding-left: 37px;
+    padding-top: 146px;
+    padding-left: 35px;
 }
 
 .arrow {

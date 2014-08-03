@@ -14,6 +14,7 @@ html(lang="en")
     //-link(href="bower_components/alertify/themes/alertify.core.css", rel="stylesheet")
     //-link(href="bower_components/alertify/themes/alertify.default.css", rel="stylesheet")
 
+    <script src="https://hammerjs.github.io/dist/hammer.js"></script>
     link(href='app/tips/tips.less', rel='stylesheet/less')
 
     script(src='bower_components/less/dist/less-1.7.4.js')
@@ -30,6 +31,7 @@ html(lang="en")
 
     .views
       .view.view-main
+        a#to_index_btn.hidden.back(href="/") *
           block content
 
     script(src="bower_components/jquery/dist/jquery.js")

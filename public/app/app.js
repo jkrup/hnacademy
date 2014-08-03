@@ -14,35 +14,33 @@ var mainView = myApp.addView('.view-main', {
 });
 window.mainView = mainView;
 
+
 window.goToCourseIndex = function(index) {
-  $$($(".course-item")[index]).click();
+  //window.mainView.loadPage("/");
+  $$("#to_index_btn").click();
+  setTimeout(function() {$$($(".course-item")[index]).click()}, 750);
 };
 // Swiper code
 myApp.onPageInit("course", function(page) {
-  /*var coverPage = function() {
-    $(".toolbar").fadeOut("fast")
-    $(".custom-navbar").fadeOut("fast")
-  }*/
+  $("#fast-forward").click(function(e) {
+    console.log("FF");
+    window.swiper.swipeTo(parseInt($("#swiper").attr('data-email')),750)
+    e.stopPropagation();
+    return false;
+  });
+  var hammertime = new Hammer($("body")[0], {});
+  hammertime.on('tap', function(ev) {
+    console.log("tapped");
+    $(".custom-navbar").fadeToggle("fast")
+  });
   var mySwiper = $('.swiper-container').swiper({
     mode:'horizontal',
     loop: false,
     onSlideChangeEnd: function(s,d) {
       $("#current_slide_num").html(s.activeIndex);
-      /*if(s.activeIndex == 1 )
-        {
-          console.log("hi")
-          $(".toolbar").fadeIn("slow")
-          $(".custom-navbar").fadeIn("slow")
-        }
-      if(s.activeIndex == 0) {
-        //cover_page();
-        $(".toolbar").fadeOut("fast")
-        $(".custom-navbar").fadeOut("fast")
-      }*/
     }
   });
   window.swiper = mySwiper;
-  //coverPage();
 
   loadFaves(page);
 });
@@ -61,11 +59,13 @@ function loadFaves(page) {
       else
         $$(this).removeClass('faved');
     })
-    .on('click', function() {
+    .on('click', function(e) {
       var id = $$(this).data('id');
       $$(this).toggleClass('faved');
       localStorage.setItem("course-favs/"+pageUrlSlug+"/"+id, $$(this).is(".faved"));
       updateFavResult();
+      e.stopPropogation();
+      return false;
     });
   updateFavResult();
 }
