@@ -16,7 +16,8 @@ window.mainView = mainView;
 
 window.goToCourseIndex = function(index) {
   //window.mainView.loadPage("/");
-  $$($(".course-item")[index]).click();
+  $$("#to_index_btn").click();
+  setTimeout(function() {$$($(".course-item")[index]).click()}, 750);
 };
 // Swiper code
 myApp.onPageInit("course", function(page) {
