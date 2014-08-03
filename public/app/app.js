@@ -7,15 +7,19 @@ var $$ = Framework7.$;
 // Add view
 var mainView = myApp.addView('.view-main', {
   // Because we want to use dynamic navbar, we need to enable it for this view:
-  dynamicNavbar: true
+  dynamicNavbar: false
 });
 
 // Swiper code
-    $(function(){
-        var mySwiper = $('.swiper-container').swiper({
-          //Your options here:
-          mode:'horizontal',
-          loop: false
-          //etc..
-          });
-        })
+myApp.onPageInit("course", function(page) {
+
+  var mySwiper = $('.swiper-container').swiper({
+    mode:'horizontal',
+    loop: false,
+    onSlideChangeEnd: function(s,d) {
+      $("#current_slide_num").html(s.activeIndex);
+      console.log("HIT");
+    }
+
+  });
+});

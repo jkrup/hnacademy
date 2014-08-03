@@ -1,121 +1,121 @@
 @import '../global/baseline.less';
 
 body{
-	background: #fff;
+  background: #fff;
 }
 
 .swiper-container, .swiper-slide {
-    height: 100%;
-  }
+  height: 100%;
+}
 
 .tips{
   position: relative; /* I think we need this if we have absolute under it */
-	max-width: 400px;
-	margin: 0 auto;
+  max-width: 400px;
+  margin: 0 auto;
 
-	.tips-header{
-		position: absolute;
-		width: 100%;
-		top: 20px;
+  .tips-header{
+    position: absolute;
+    width: 100%;
+    top: 20px;
 
-		.header-menu{
-			position: absolute;
-			left: 0;
-			top: 0;
-			height: 44px;
-			line-height: 44px;
+    .header-menu{
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 44px;
+      line-height: 44px;
 
-			.menu-back{
-				color: #aaa;
-				.font-size(24);
-				width: 44px;
-				text-align: center;
-				display: block;
-				text-decoration: none;
+      .menu-back{
+        color: #aaa;
+        .font-size(24);
+        width: 44px;
+        text-align: center;
+        display: block;
+        text-decoration: none;
 
-				i{
-					
-				}
-			}
-		}
+        i{
 
-		.header-name{
-			height: 44px;
-			line-height: 44px;
-			.font(18, 400);
-			color: #aaa;
-			text-align: center;
-		}
-	}
+        }
+      }
+    }
 
-	.tips-title{
-		background: #eee;
-		padding: 64px+15px 25px 25px;
+    .header-name{
+      height: 44px;
+      line-height: 44px;
+      .font(18, 400);
+      color: #aaa;
+      text-align: center;
+    }
+  }
 
-		.title{
-			.font(28, 400);
-			color: #333;
-		}
-	}
+  .tips-title{
+    background: #eee;
+    padding: 64px+15px 25px 25px;
 
-	.tips-copy{
-		padding: 25px;
+    .title{
+      .font(28, 400);
+      color: #333;
+    }
+  }
 
-		p{
-			.dfont(20, 400);
-			line-height: 29px;
-			color: #666;
-			margin: 0 0 20px;
-		}
-	}
+  .tips-copy{
+    padding: 25px;
 
-	.tips-footer{
-		background: #fff;
-		box-shadow: 0 -1px 0 rgba(0,0,0,.15);
-		position: fixed;
-		bottom: 0;
-		right: 0;
-		left: 0;
+    p{
+      .dfont(20, 400);
+      line-height: 29px;
+      color: #666;
+      margin: 0 0 20px;
+    }
+  }
 
-		.footer-buttons{
-			.clearfix();
+  .tips-footer{
+    background: #fff;
+    box-shadow: 0 -1px 0 rgba(0,0,0,.15);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
 
-			.button{
-				float: left;
-				box-shadow: inset -1px 0 #d9d9d9;
-				height: 44px;
-				line-height: 44px;
-				text-align: center;
+    .footer-buttons{
+      .clearfix();
 
-				&:last-child{
-					box-shadow: none;
-				}
+      .button{
+        float: left;
+        box-shadow: inset -1px 0 #d9d9d9;
+        height: 44px;
+        line-height: 44px;
+        text-align: center;
 
-				span{
-					.font(16, 400);
-					color: #999;
-					padding: 0 5px;
-				}
+        &:last-child{
+          box-shadow: none;
+        }
 
-				i{
-					.font-size(16);
-					color: #999;
-				}
-			}
+        span{
+          .font(16, 400);
+          color: #999;
+          padding: 0 5px;
+        }
 
-			.location-button{
-				width: 100 / 320px*100%;
-			}
-			.favorite-button{
-				width: 130 / 320px*100%;
-			}
-			.next-button{
-				width: 90 / 320px*100%;
+        i{
+          .font-size(16);
+          color: #999;
+        }
+      }
 
-				i{
-					.font-size(20);
-				}
-			}
-		}
-	}
+      .location-button{
+        width: 100 / 320px*100%;
+      }
+      .favorite-button{
+        width: 130 / 320px*100%;
+      }
+      .next-button{
+        width: 90 / 320px*100%;
+
+        i{
+          .font-size(20);
+        }
+      }
+    }
+  }
 }

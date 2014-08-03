@@ -1,17 +1,23 @@
-extends layout
-
-block title
-  course.title
-block content
-  .swiper-container
-    #swiper.swiper-wrapper
-      each slide in course.slides
-        .swiper-slide
-          if slide.type == "cover"
-            include partials/type-cover.jade
-block toolbar
+.page(data-page="course")
+  .page-content
+    .navbar
+      .navbar-inner
+        .left
+          a.link.back.icon-only(href="/")
+            i.icon.icon-bars-blue
+        .center
+          = course.title
+    .swiper-container
+      #swiper.swiper-wrapper
+          each slide, index in course.slides
+            .swiper-slide
+              case slide.type
+                when "cover"
+                  include partials/type-cover.jade
+                when "statement"
+                  include partials/type-statement.jade
   .toolbar
     .toolbar-inner
-      a.link(href="#") 17 of 35
+      a.link(href="#") <span id="current_slide_num">0</span>&nbsp;of #{course.slides.length}
       a.link(href="#") Favorite
       a.link(href="#") Next

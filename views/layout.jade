@@ -19,25 +19,9 @@ html(lang="en")
       .content-block
         p Left panel content goes here
     .views
-
       .view.view-main
-        .navbar
-          .navbar-inner
-            .left
-              a.link.icon-only(href="/")
-                i.icon.icon-bars-blue
-                  .center.sliding
-                    block title
-                      Index
-        .pages.navbar-through.toolbar-through
-          .page(data-page="index")
-            .page-content
-              block content
-        block toolbar
-          .toolbar
-            .toolbar-inner
-              a.link(href="#") default
-
+        .pages
+          block content
     script(src="bower_components/jquery/dist/jquery.js")
     script(src="bower_components/handlebars/handlebars.js")
     script(src="bower_components/framework7/dist/js/framework7.min.js")
