@@ -28,8 +28,12 @@ myApp.onPageInit("course", function(page) {
     e.stopPropagation();
     return false;
   });
-  var hammertime = new Hammer($("body")[0], {});
-  hammertime.on('tap', function(ev) {
+  //var hammertime = new Hammer($("body")[0], {});
+  //hammertime.on('tap', function(ev) {
+    //console.log("tapped");
+    //$(".custom-navbar").fadeToggle("fast")
+  //});
+  $("body").off('click').on('click', function(e) {
     console.log("tapped");
     $(".custom-navbar").fadeToggle("fast")
   });
