@@ -37,4 +37,47 @@ myApp.onPageInit("course", function(page) {
   });
   window.swiper = mySwiper;
   //coverPage();
+
+  loadFaves(page);
 });
+
+function loadFaves(page) {
+  var $page = $$(page.container);
+  var pageUrlSlug = $page.data('urlslug');
+  window.pageUrlSlug = pageUrlSlug;
+
+  $page.find(".fav-button")
+    .each(function() {
+      var id = $$(this).data('id');
+      var data = localStorage.getItem("course-favs/"+pageUrlSlug+"/"+id);
+      if (data === 'true')
+        $$(this).addClass('faved');
+      else
+        $$(this).removeClass('faved');
+    })
+    .on('click', function() {
+      var id = $$(this).data('id');
+      $$(this).toggleClass('faved');
+      localStorage.setItem("course-favs/"+pageUrlSlug+"/"+id, $$(this).is(".faved"));
+      updateFavResult();
+    });
+  updateFavResult();
+}
+
+function updateFavResult() {
+  var res = [];
+  for (var i = 0; i < swiper.slides.length; i++) {
+    var $slide = $$(swiper.slides[i]);
+    var $favBtn = $slide.find(".fav-button");
+    if ($favBtn.length > 0) {
+      var id = $favBtn.data('id');
+      var data = localStorage.getItem("course-favs/"+pageUrlSlug+"/"+id);
+      if (data === 'true')
+        res.push("<div class='fav-result'>"+$slide.find(".title").html()+"</div>");
+    }
+  }
+  $$(".slide-results").html(res.join(""));
+}
+
+
+
