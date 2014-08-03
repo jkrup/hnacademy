@@ -85,7 +85,7 @@ function updateFavResult() {
       var id = $favBtn.data('id');
       var data = localStorage.getItem("course-favs/"+pageUrlSlug+"/"+id);
       if (data === 'true')
-        res.push("<div class='fav-result'>"+$slide.find(".title").html()+"</div>");
+        res.push("<div class='fav-result'>"+$slide.find(".tip-head").html()+"</div>");
     }
   }
   $$(".slide-results").html(res.join(""));
