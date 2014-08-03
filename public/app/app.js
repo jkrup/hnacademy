@@ -13,16 +13,16 @@ var mainView = myApp.addView('.view-main', {
 
 // Swiper code
 myApp.onPageInit("course", function(page) {
-  var coverPage = function() {
+  /*var coverPage = function() {
     $(".toolbar").fadeOut("fast")
     $(".custom-navbar").fadeOut("fast")
-  }
+  }*/
   var mySwiper = $('.swiper-container').swiper({
     mode:'horizontal',
     loop: false,
     onSlideChangeEnd: function(s,d) {
       $("#current_slide_num").html(s.activeIndex);
-      if(s.activeIndex == 1 )
+      /*if(s.activeIndex == 1 )
         {
           console.log("hi")
           $(".toolbar").fadeIn("slow")
@@ -32,9 +32,9 @@ myApp.onPageInit("course", function(page) {
         //cover_page();
         $(".toolbar").fadeOut("fast")
         $(".custom-navbar").fadeOut("fast")
-      }
+      }*/
     }
   });
   window.swiper = mySwiper;
-  coverPage();
+  //coverPage();
 });
