@@ -12,7 +12,7 @@
       .swiper-container
         #swiper.swiper-wrapper
             each slide, index in course.slides
-              .swiper-slide
+              .swiper-slide(style="background: "+(slide.background || 'transparent'))
                 case slide.type
                   when "cover"
                     include partials/type-cover.jade
