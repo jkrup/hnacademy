@@ -22,6 +22,7 @@ window.goToCourseIndex = function(index) {
 };
 // Swiper code
 myApp.onPageInit("course", function(page) {
+  $(".custom-navbar").fadeOut('fast');
   
   $("#fast-forward").click(function(e) {
     console.log("FF");
@@ -69,7 +70,7 @@ function loadFaves(page) {
       $$(this).toggleClass('faved');
       localStorage.setItem("course-favs/"+pageUrlSlug+"/"+id, $$(this).is(".faved"));
       updateFavResult();
-      e.stopPropogation();
+      e.stopPropagation();
       return false;
     });
   updateFavResult();

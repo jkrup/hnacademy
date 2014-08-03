@@ -1,12 +1,16 @@
 
 table
-  tr: td
-    .statement-head
-      .title
-        = slide.tip
-    .statement-text
+  tr: td.tip-head
+      = slide.tip
+  
+  tr: td.tip-text
       = slide.hint
 
   tr: td.button-row
+    .slide-count
+      = (curTip++) + "/" + tips
     .fav-button(data-id=slide.id)
-      | Favorite
+      .not-faved-content
+        | MARK AS FAVORITE
+      .faved-content
+        | MARKED AS FAVORITE
