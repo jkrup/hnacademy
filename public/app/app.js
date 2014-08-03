@@ -35,5 +35,6 @@ myApp.onPageInit("course", function(page) {
       }
     }
   });
+  window.swiper = mySwiper;
   coverPage();
 });
