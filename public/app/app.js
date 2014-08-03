@@ -13,6 +13,7 @@ var mainView = myApp.addView('.view-main', {
 window.mainView = mainView;
 
 window.goToCourseIndex = function(index) {
+  //window.mainView.loadPage("/");
   $$($(".course-item")[index]).click();
 };
 // Swiper code
