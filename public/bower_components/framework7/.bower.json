@@ -8,7 +8,23 @@
   "version": "0.9.4",
   "author": "Vladimir Kharlampidi",
   "homepage": "http://www.idangero.us/framework7",
-  "keywords": ["mobile", "framework", "ios 7", "ios7", "ios8", "ios 8", "iphone", "ipad", "apple", "phonegap", "native", "touch", "appstore", "app", "f7"],
+  "keywords": [
+    "mobile",
+    "framework",
+    "ios 7",
+    "ios7",
+    "ios8",
+    "ios 8",
+    "iphone",
+    "ipad",
+    "apple",
+    "phonegap",
+    "native",
+    "touch",
+    "appstore",
+    "app",
+    "f7"
+  ],
   "scripts": [
     "dist/js/framework7.js"
   ],
@@ -16,7 +32,9 @@
   "styles": [
     "dist/css/framework7.css"
   ],
-  "license": ["MIT"],
+  "license": [
+    "MIT"
+  ],
   "ignore": [
     ".*",
     "build",
@@ -26,5 +44,14 @@
     "apps",
     "node_modules",
     "package.json"
-  ]
+  ],
+  "_release": "0.9.4",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.9.4",
+    "commit": "981a88b60c8624a8ecab2e42b4866daef9033634"
+  },
+  "_source": "git://github.com/nolimits4web/Framework7.git",
+  "_target": "~0.9.4",
+  "_originalSource": "framework7"
 }

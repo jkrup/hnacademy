@@ -7,11 +7,11 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <title>HN Academy</title>
 
-    <link rel="stylesheet/less" href="app/tips/tips.less" />
     <link rel="stylesheet" href="bower_components/framework7/dist/css/framework7.min.css">
+    <link rel="stylesheet" href="bower_components/idangerous-swiper/dist/idangerous.swiper.css">
+
+    <link rel="stylesheet/less" href="app/tips/tips.less" />
     <script src="bower_components/less/dist/less-1.7.4.js"></script>
-    <link rel="stylesheet" href="/bower_components/idangerous-swiper/dist/idangerous.swiper.css">
-    <script defer src="/bower_components/idangerous-swiper/dist/idangerous.swiper.min.js"></script>
     <script> less.watch(); less.env = "development"; localStorage.clear(); </script>
 </head>
 <body>
@@ -50,17 +50,8 @@
             <div class="page-content">
 
               <div class="swiper-container">
-                <div class="swiper-wrapper">
-                  <!--First Slide-->
-                  <div class="swiper-slide" style="background:#444"> 
-                    <p> this is a test text blob</p>
-                    <!-- Any HTML content of the first slide goes here -->
-                  </div>
-                  <!--Second Slide-->
-                  <div class="swiper-slide" style="background:#900"> 
-                    <p>And another blob of text</p>
-                    <!-- Any HTML content of the second slide goes here -->
-                  </div>
+                <div class="swiper-wrapper" id="swiper">
+
                 </div>
               </div>
 
@@ -83,15 +74,31 @@
 
     </div>
 
+
+
+    
+    <script id="slide-template" type="text/x-handlebars-template">
+        <div class="swiper-slide"> 
+            {{type}}
+
+            {{title}}
+        </div>
+    </script>
+
+
+
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/handlebars/handlebars.js"></script>
     <script src="bower_components/framework7/dist/js/framework7.min.js"></script>
+    <script defer src="bower_components/idangerous-swiper/dist/idangerous.swiper.min.js"></script>
 
     <script src="app/app.js"></script>
 
-  <script src="bower_components/alertify/alertify.js"></script>
-  <link href="bower_components/alertify/themes/alertify.core.css" rel="stylesheet/css" />
-  <link href="bower_components/alertify/themes/alertify.default.css" rel="stylesheet/css" />
+    <script src="bower_components/alertify/alertify.js"></script>
+    <link href="bower_components/alertify/themes/alertify.core.css" rel="stylesheet/css" />
+    <link href="bower_components/alertify/themes/alertify.default.css" rel="stylesheet/css" />
+
+
   <script type="text/javascript">
     $(function(){
         var mySwiper = $('.swiper-container').swiper({
