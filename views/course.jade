@@ -17,7 +17,7 @@
             - var tips = course.slides.filter(function(s) {return s.type == 'tip'}).length;
             - var curTip = 1;
             each slide, index in course.slides
-              .swiper-slide(style="background: "+(slide.background || 'transparent'))
+              .swiper-slide
                 case slide.type
                   when "cover"
                     include partials/type-cover.jade
@@ -29,7 +29,7 @@
                     include partials/type-tip.jade
                   when "email-results"
                     include partials/type-email-results.jade
-                  when "complete"
+                  when "completed"
                     include partials/type-complete.jade
     .toolbar.hidden
       .toolbar-inner
