@@ -1,13 +1,14 @@
 .pages
   .page(data-page="course").no-navbar
     .page-content
-      .custom-navbar
+      //-.custom-navbar
         .custom-navbar-inner
           .left-abs
             a.link.back.icon-only(href="/")
-              <
+              | &lt;
           .center
             = course.title
+
       .swiper-container
         #swiper.swiper-wrapper
             each slide, index in course.slides
@@ -25,7 +26,8 @@
                     include partials/type-email-results.jade
                   when "complete"
                     include partials/type-complete.jade
-    .toolbar.hidden
+    
+    //-.toolbar.hidden
       .toolbar-inner
         a.link.muted(href="#") <span id="current_slide_num">0</span>&nbsp;of #{course.slides.length -1}
         a.link.muted(href="#") 
