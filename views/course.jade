@@ -1,0 +1,52 @@
+doctype
+html(lang="en")
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui')
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    title HN Academy
+    link(rel='stylesheet', href='bower_components/framework7/dist/css/framework7.min.css')
+    link(rel='stylesheet', href='bower_components/idangerous-swiper/dist/idangerous.swiper.css')
+    link(rel='stylesheet/less', href='app/tips/tips.less')
+    script(src='bower_components/less/dist/less-1.7.4.js')
+    script.
+      less.watch(); less.env = "development"; localStorage.clear();
+  body
+    .statusbar-overlay
+    .panel-overlay
+    .panel.panel-left.panel-reveal
+      .content-block
+        p Left panel content goes here
+    .views
+      .view.view-main
+        .navbar
+          .navbar-inner
+            .left
+              a.link.icon-only.open-panel(href="#")
+                i.icon.icon-bars-blue
+            .center.sliding= course.title
+        .pages.navbar-through.toolbar-through
+          .page(data-page="index")
+            .page-content
+              .swiper-container
+                #swiper.swiper-wrapper
+                  each slide in course.slides
+                    .swiper-slide
+                      if slide.type == "cover"
+                        include partials/type-cover.jade
+        .toolbar
+          .toolbar-inner
+            a.link(href="#") 17 of 35
+            a.link(href="#") Favorite
+            a.link(href="#") Next
+
+    script(src="bower_components/jquery/dist/jquery.js")
+    script(src="bower_components/handlebars/handlebars.js")
+    script(src="bower_components/framework7/dist/js/framework7.min.js")
+    script(defer, src="bower_components/idangerous-swiper/dist/idangerous.swiper.min.js")
+    script(src="app/app.js")
+    script(src="bower_components/alertify/alertify.js")
+    link(href="bower_components/alertify/themes/alertify.core.css", rel="stylesheet/css")
+    link(href="bower_components/alertify/themes/alertify.default.css", rel="stylesheet/css")
+    script(src="/app/tips/tips.js", type="text/javascript")
