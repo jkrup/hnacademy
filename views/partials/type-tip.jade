@@ -1,5 +1,12 @@
-.statement-head
-  .title
-    = slide.tip
-.statement-text
-  = slide.hint
+
+table
+  tr: td
+    .statement-head
+      .title
+        = slide.tip
+    .statement-text
+      = slide.hint
+
+  tr: td.button-row
+    .fav-button(data-id=slide.id)
+      | Favorite

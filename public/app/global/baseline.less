@@ -1,7 +1,5 @@
-@import '//fonts.googleapis.com/css?family=Exo:400,700';
-@import '//fonts.googleapis.com/css?family=Droid+Serif';
-@import '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css';
-@import '//fonts.googleapis.com/css?family=Lato:300';
+@import '//fonts.googleapis.com/css?family=Exo:400,700;Droid+Serif;Lato:300';
+//@import '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css';
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary{
 	display:block;
@@ -16,8 +14,8 @@ audio:not([controls]){
 	height:0;
 }
 
-[hidden]{
-	display:none;
+.hidden{
+  display:none;
 }
 
 html{
@@ -553,4 +551,51 @@ a.link.muted {
     border-right: 1px solid @mutedcolor;
     padding-right: 5px;
   }
+}
+
+/* ==================================================== */
+.swiper-slide table {
+    margin: 0; padding: 0; 
+    border-collapse: collapse;
+    border-spacing: 0;
+	td {
+	    border: 0px;
+	    margin: 0; padding: 0;
+	    vertical-align: top;
+	    height: 100%;
+	    &.button-row {
+	    	vertical-align: middle;
+		    height: 1px;
+		    padding: 10px;
+		}
+	}
+}
+
+.swiper-slide > table {
+    width: 100%; height: 100%;
+}
+
+.fav-button {
+	text-align: center;
+	font-size: 18px;
+	line-height: 50px;
+	background: #AAA;
+	color: white;
+	&.faved {
+		color: #EEE;
+		&:before {
+			content: "✔ ";
+		}
+		&:after {
+			content: "d";
+		}
+	}
+	&:active {
+		background: #888;
+	}
+}
+
+.slide-results .fav-result {
+	margin-bottom: 16px;
+	line-height: 1.3;
 }

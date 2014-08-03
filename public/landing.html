@@ -22,13 +22,13 @@
 
         <br><br><br><br>
            
-        <a class="course-title">How to Be Awesome at Hackathons</a>
+        <a data-index=0 class="course_button course-title" href="#">How to Be Awesome at Hackathons</a>
         <p>Curated by Yury Lifshits</p><br>
 
-        <a class="course-title">How to Name Things</a>
+        <a data-index=1 class="course-title course_button" href="#">How to Name Things</a>
         <p>Curated by Eugene Triphonov</p><br>
 
-        <a class="course-title">How to be Good at Public Speaking</a>
+        <a data-index=2 class="course_button course-title" href="#">How to be Good at Public Speaking</a>
         <p>Based on Speaking.io Guide by Zach Holman</p>
           
         <br><br><br>
@@ -54,13 +54,13 @@
       <div class="col-xs-6">
         <div id="phone">
           
-          <img class="arrow left-arrow" src="img/left-arrow.png" alt="left arrow">
+          <img id="left_swipe" class="arrow left-arrow" src="img/left-arrow.png" alt="left arrow">
           
           <div id="phone-skin">
-            <iframe src="?mobile=force"></iframe>
+            <iframe id="app_frame" src="?mobile=force"></iframe>
           </div>
           
-          <img class="arrow left-arrow" src="img/right-arrow.png" alt="right arrow">
+          <img class="arrow left-arrow" src="img/right-arrow.png" id="right_swipe" alt="right arrow">
         </div>
       
       </div>
@@ -84,6 +84,22 @@
 
 <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script>
+$("#right_swipe").click( function() {
+  $("#app_frame")[0].contentWindow.swiper.swipeNext()
+  return false;
+});
+$("#left_swipe").click( function() {
+  $("#app_frame")[0].contentWindow.swiper.swipePrev()
+  return false;
+});
+$(".course_button").click(function() {
+  index = $(this).attr('data-index')
+  console.log(index);
+  $("#app_frame")[0].contentWindow.goToCourseIndex(parseInt(index));
+  return false;
+})
+</script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

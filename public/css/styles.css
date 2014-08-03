@@ -52,16 +52,15 @@ iframe {
     height: 548px;
     width: 320px;
     border: 0;
-    border-top: 3px solid black;
 }
 
 #phone-skin {
     background-image: url('../img/iPhone.png');
-    height: 812px;
-    width: 404px;
+    height: 818px;
+    width: 387px;
     display: inline-block;
     padding-top: 148px;
-    padding-left: 44px;
+    padding-left: 37px;
 }
 
 .arrow {
@@ -80,4 +79,7 @@ a:hover {
 
 #contacts {
     margin: 13px 20px;
+}
+#left_swipe, #right_swipe {
+  cursor: pointer;
 }

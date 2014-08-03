@@ -4,12 +4,20 @@ body{
   background: #fff;
 }
 
-.swiper-container, .swiper-slide {
-  min-height: 100%;
+.swiper-container {
+  height: 100%;
 }
 
+.swiper-slide {
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+}
+
+/*
 .tips{
-  position: relative; /* I think we need this if we have absolute under it */
+  position: relative;
   max-width: 400px;
   margin: 0 auto;
 
@@ -119,3 +127,4 @@ body{
     }
   }
 }
+*/
