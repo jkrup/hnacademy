@@ -11,7 +11,9 @@
             = course.title
 
       .swiper-container
-        #swiper.swiper-wrapper(data-email=3)
+        -var idx = 0
+        - var idx = course.slides.forEach(function(e,i) { if(e.type =="email-results"){ idx = i}  });
+        #swiper.swiper-wrapper(data-email=idx)
             each slide, index in course.slides
               .swiper-slide
                 case slide.type

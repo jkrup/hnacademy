@@ -22,6 +22,7 @@ window.goToCourseIndex = function(index) {
 };
 // Swiper code
 myApp.onPageInit("course", function(page) {
+  
   $("#fast-forward").click(function(e) {
     console.log("FF");
     window.swiper.swipeTo(parseInt($("#swiper").attr('data-email')),750)
